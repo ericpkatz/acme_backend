@@ -6,7 +6,6 @@ const app = express();
 
 app.use(cors());
 
-
 app.get('/api/things', async(req, res, next)=> {
   try {
     const SQL = `
@@ -28,12 +27,13 @@ const setup = async()=> {
     DROP TABLE IF EXISTS things;
     CREATE TABLE things(
       id SERIAL PRIMARY KEY,
-      name VARCHAR(100)
+      name VARCHAR(100),
+      is_favorite BOOLEAN
     );
     INSERT INTO things (name) VALUES ('foo');
     INSERT INTO things (name) VALUES ('bar');
     INSERT INTO things (name) VALUES ('bazz');
-    INSERT INTO things (name) VALUES ('quq');
+    INSERT INTO things (name, is_favorite) VALUES ('quq', true);
   `;
   await client.query(SQL);
   console.log('tables created and data seeded');
