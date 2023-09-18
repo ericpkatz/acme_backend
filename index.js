@@ -1,7 +1,11 @@
 const pg = require('pg');
 const client = new pg.Client('postgres://localhost/acme_backend_db');
+const cors = require('cors');
 const express = require('express');
 const app = express();
+
+app.use(cors());
+
 
 app.get('/api/things', async(req, res, next)=> {
   try {
