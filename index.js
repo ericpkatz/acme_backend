@@ -1,7 +1,9 @@
 const pg = require('pg');
-//const client = new pg.Client('postgres://localhost/acme_backend_db');
+const client = new pg.Client('postgres://localhost/acme_backend_db');
 //for ubuntu folks
-//replace with your username
+//comment out line above
+//and uncomment below
+/*
 const config = {
   host: 'localhost',
   port: 5432,
@@ -10,6 +12,7 @@ const config = {
   password: ' ' 
 }
 const client = new pg.Client(config);
+*/
 const cors = require('cors');
 const express = require('express');
 const app = express();
