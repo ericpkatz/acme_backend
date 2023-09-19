@@ -1,5 +1,5 @@
 # acme_backend
 
-- create database acme_backend_db
+- CREATEDB acme_backend_db
 - npm install
 - npm run start:dev
